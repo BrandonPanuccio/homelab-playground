@@ -1,0 +1,65 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Root logs
+# =========================
+*.log
+
+# =========================
+# UI / Node / Vite
+# =========================
+ui/node_modules/
+ui/dist/
+ui/.vite/
+ui/coverage/
+
+# npm / yarn / pnpm debug logs
+ui/npm-debug.log*
+ui/yarn-debug.log*
+ui/yarn-error.log*
+ui/pnpm-debug.log*
+
+# Optional env files
+ui/.env
+ui/.env.*
+!ui/.env.example
+
+# =========================
+# API / Java / Maven / Spring Boot
+# =========================
+api/target/
+
+# Spring / Java logs
+api/*.log
+
+# Optional env/config secrets
+api/.env
+api/.env.*
+!api/.env.example
+
+# =========================
+# Database / local data
+# =========================
+db/data/
+db/tmp/
+db/logs/
+
+# SQLite / local DB files if you ever add them
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# General build artifacts
+# =========================
+out/
+build/
