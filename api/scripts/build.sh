@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-API_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+API_DIR="$ROOT_DIR/api"
 
-cd "${API_DIR}"
+cd "$API_DIR"
 
-echo "Building API from ${API_DIR}..."
+echo "Building API jar..."
 
-if [[ -x "./mvnw" ]]; then
-  ./mvnw clean package
-else
-  mvn clean package
-fi
+mvn clean package
 
-echo "API build complete."
+echo "Done."
+echo "Jar output:"
+ls -1 target/*.jar

@@ -1,9 +1,5 @@
 import { Client } from "@stomp/stompjs";
-
-export type HeartbeatMessage = {
-  message: string;
-  timestamp: string;
-};
+import type { HeartbeatMessage } from "../types/HeartbeatMessage"
 
 type ConnectHandlers = {
   onMessage: (message: HeartbeatMessage) => void;

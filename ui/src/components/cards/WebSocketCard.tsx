@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { createHeartbeatClient, type HeartbeatMessage } from "../../services/websocketService";
+import { createHeartbeatClient } from "../../services/websocketService";
 import type { CSSProperties } from "react";
+import type { HeartbeatMessage } from "../../types/HeartbeatMessage";
 
 export default function WebSocketCard() {
   const [connected, setConnected] = useState(false);
