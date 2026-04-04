@@ -13,8 +13,11 @@ type ConnectHandlers = {
 };
 
 export function createHeartbeatClient(handlers: ConnectHandlers) {
+  const protocol = window.location.protocol === "https:" ? "wss" : "ws";
+  const host = window.location.host;
+
   const client = new Client({
-    brokerURL: "ws://localhost:8080/ws",
+    brokerURL: `${protocol}://${host}/ws`,
     reconnectDelay: 3000,
     onConnect: () => {
       handlers.onConnect?.();
