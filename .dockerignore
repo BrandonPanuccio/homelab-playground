@@ -1,0 +1,10 @@
+.git
+.gitignore
+.vscode
+.idea
+
+ui/node_modules
+ui/dist
+api/target
+
+**/*.log

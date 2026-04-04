@@ -1,0 +1,18 @@
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: docker/api/Dockerfile
+    container_name: homelab-playground-api
+    ports:
+      - "8080:8080"
+
+  ui:
+    build:
+      context: ../..
+      dockerfile: docker/ui/Dockerfile
+    container_name: homelab-playground-ui
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
