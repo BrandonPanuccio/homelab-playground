@@ -1,5 +1,4 @@
 import { Client } from "@stomp/stompjs";
-import SockJS from "sockjs-client";
 
 export type HeartbeatMessage = {
   message: string;
@@ -15,7 +14,7 @@ type ConnectHandlers = {
 
 export function createHeartbeatClient(handlers: ConnectHandlers) {
   const client = new Client({
-    webSocketFactory: () => new SockJS("http://localhost:8080/ws"),
+    brokerURL: "ws://localhost:8080/ws",
     reconnectDelay: 3000,
     onConnect: () => {
       handlers.onConnect?.();
